@@ -39,7 +39,7 @@ class MarkerManager {
         console.log(`Adding ${title}`);
 
         var idx = this.markers.length + 1;
-        //localStorage.removeItem(idx.toString());
+        localStorage.removeItem(idx.toString());
         var stored = getStoredMarker(idx)
 
         var icon = new L.AwesomeNumberMarkers({
