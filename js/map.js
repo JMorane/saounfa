@@ -19,15 +19,20 @@ class CurrentPosition {
         this.marker = null;
         this.circle = null;
         this.color = null;
+        this.displayed = false;
     }
 
     setInitial(latlng) {
+        if (this.displayed) {
+            return
+        }
         this.map = getMap();
         this.marker = new L.marker(latlng, { icon: this.icon })
         this.marker.addTo(this.map)
         this.circle = L.circle(latlng, this.radius);
         this.circle.setStyle({color: this.color})
         this.circle.addTo(this.map);
+        this.displayed = true;
     }
 
     updateLocation(latlng) {
@@ -75,7 +80,7 @@ export function onLocationFound(e) {
 
 // For debbuging: move current position where clicked
 export function onLongPress(latlng) {
-    
+
     // Handle the long press event here
     console.log('Long press at', latlng);
     
