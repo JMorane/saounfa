@@ -26,8 +26,8 @@ function testFunc(e) {
     var latlngStruct = {lat:e.coords.latitude, lng: e.coords.longitude};
 
     //map.locate({setView: true});
-    onLongPress(latlngStruct);
     map.flyTo([latlngStruct.lat, latlngStruct.lng]);
+    onLongPress(latlngStruct);
     map.setZoom(110);
 }
 
