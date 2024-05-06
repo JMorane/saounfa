@@ -67,6 +67,7 @@ export function initializeMap() {
 export function onLocationFound(e) {
     // e.accuracy is available for a potential circle diameter
     console.log("Location found");
+    console.log(e.latlng);
     currentPos.setInitial(e.latlng)
 }
 

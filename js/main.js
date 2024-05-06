@@ -16,6 +16,13 @@ function onLocationError(e) {
     alert(e.message);
 }
 
+function testFunc(e) {
+    var myDiv = document.getElementById("myDiv");
+
+    // Change its content
+    myDiv.innerHTML = e.coords.latitude.toString() + " - " + e.coords.longitude.toString();
+}
+
 map.on('locationerror', onLocationError);
 
 // Add nearby markers activation
@@ -25,4 +32,10 @@ registerOnLongPress()
 
 // Add first itinerary markers
 itineraryOne();
+
+// Watch position
+navigator.geolocation.watchPosition(testFunc, onLocationError, {
+    maximumAge: 1000,
+    timeout: 2000
+  });
   
