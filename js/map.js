@@ -1,4 +1,5 @@
 import 'https://unpkg.com/leaflet';
+import { Fallback } from './tileFallback.js';
 
 const PARIS_LATLNG = [48.866667, 2.333333];
 const ZOOM_LEVEL = 200; //10;
@@ -8,59 +9,6 @@ const MATHIS_ICON = L.icon({
     iconSize: [50, 50], // Size of the icon
     // iconAnchor: [50, 25],
 });
-
-function setSrcWithStatusCheck(tile, url, fallback_url) {
-    function setSrc(effective_url) {
-        tile.src = effective_url;
-    }
-
-    // Make the request to fetch the image content
-    fetch(url)
-        .then(function (response) {
-            if (!response.ok) {
-                // Handle non-OK responses
-                setSrc(fallback_url);
-            } else {
-                // Convert the image content to base64
-                return response.blob();
-            }
-        })
-        .then(function (blob) {
-            return new Promise(function (resolve, reject) {
-                var reader = new FileReader();
-                reader.onloadend = function () {
-                    resolve(reader.result);
-                };
-                reader.onerror = reject;
-                reader.readAsDataURL(blob);
-            });
-        })
-        .then(function (dataUrl) {
-            // Set the source of the image using the base64 data URL
-            setSrc(dataUrl);
-        })
-        .catch(function () {
-            // Handle network errors
-            setSrc(fallback_url);
-        });
-}
-
-class Fallback extends L.TileLayer {
-    constructor(urlTemplate, options, fallbackUrl) {
-        super(urlTemplate, options);
-        this.fallbackLayer = L.tileLayer(fallbackUrl, options);
-    }
-
-    createTile(coords, done) {
-        const tile = super.createTile(coords, done);
-        this.fallbackLayer._tileZoom = this._tileZoom;
-        tile._originalCoords = coords;
-
-        setSrcWithStatusCheck(tile, tile.src, this.fallbackLayer.getTileUrl(coords));
-
-        return tile;
-    }
-}
 
 class CurrentPosition {
     // Current position of the user
@@ -114,7 +62,6 @@ export function initializeMap() {
     //map = map.setView(PARIS_LATLNG, ZOOM_LEVEL);
 
     // Center it on local position
-    // map.locate({setView: true, maxZoom: ZOOM_LEVEL});
     map.locate({setView: true});
     map.setZoom(100);
 
@@ -123,12 +70,11 @@ export function initializeMap() {
     var tile = "https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg?api_key=3e5104ec-9859-4ec2-b391-1f9caf641112"
 
     var theTile = new Fallback(tile, {
-    minZoom: 1,
-    maxZoom: 16,
-    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}, default_tile);
+        minZoom: 1,
+        maxZoom: 16,
+        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }, default_tile);
 
-    //var tile = "http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg"
     theTile.addTo(map);
     // L.tileLayer(tile, {
     //     attribution: '© OpenStreetMap contributors'
