@@ -25,9 +25,10 @@ function testFunc(e) {
 
     var latlngStruct = {lat:e.coords.latitude, lng: e.coords.longitude};
 
-    map.locate({setView: true});
+    //map.locate({setView: true});
     onLongPress(latlngStruct);
-    map.setZoom(110);
+    map.flyTo([latlngStruct.lat, latlngStruct.lng], 110);
+    //map.setZoom(110);
 }
 
 map.on('locationerror', onLocationError);
