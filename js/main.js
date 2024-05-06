@@ -21,14 +21,17 @@ function testFunc(e) {
     var myDiv = document.getElementById("myDiv");
 
     // Change its content
-    myDiv.innerHTML = e.coords.latitude.toString() + " - " + e.coords.longitude.toString();
+    // myDiv.innerHTML = e.coords.latitude.toString() + " - " + e.coords.longitude.toString();
 
     var latlngStruct = {lat:e.coords.latitude, lng: e.coords.longitude};
+    //var latlngStruct = {lat:(1+0.001*Math.random())*e.coords.latitude, lng: (1+0.001*Math.random())*e.coords.longitude};
+    myDiv.innerHTML = myDiv.innerHTML = latlngStruct.lat.toString() + " - " + latlngStruct.lng.toString();
+
 
     //map.locate({setView: true});
-    map.flyTo([latlngStruct.lat, latlngStruct.lng]);
+    map.panTo([latlngStruct.lat, latlngStruct.lng], {animate:true});
     onLongPress(latlngStruct);
-    map.setZoom(110);
+    //map.setZoom((1+0.1*Math.random())*110);
 }
 
 map.on('locationerror', onLocationError);
