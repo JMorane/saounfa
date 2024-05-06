@@ -13,7 +13,8 @@ var map = getMap();
 map.on('locationfound', onLocationFound); 
 
 function onLocationError(e) {
-    alert(e.message);
+    // alert(e.message);
+    return
 }
 
 function testFunc(e) {
