@@ -1,7 +1,7 @@
 import 'https://unpkg.com/leaflet';
 
 const PARIS_LATLNG = [48.866667, 2.333333];
-const ZOOM_LEVEL = 10;
+const ZOOM_LEVEL = 200; //10;
 const RADIUS = 50; //700;
 const MATHIS_ICON = L.icon({
     iconUrl: './assets/mathis_icon.png',
@@ -56,7 +56,9 @@ export function initializeMap() {
     //map = map.setView(PARIS_LATLNG, ZOOM_LEVEL);
 
     // Center it on local position
-    map.locate({setView: true, maxZoom: ZOOM_LEVEL});
+    // map.locate({setView: true, maxZoom: ZOOM_LEVEL});
+    map.locate({setView: true});
+    map.setZoom(100);
 
     // Add a tile layer to the map
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -72,6 +74,14 @@ export function onLocationFound(e) {
 }
 
 // For debbuging: move current position where clicked
+export function onLongPress(latlng) {
+    
+    // Handle the long press event here
+    console.log('Long press at', latlng);
+    
+    // Move current position
+    currentPos.updateLocation(latlng)
+}
 
 export function registerOnLongPress(){
     var longPressTimeout;
@@ -79,19 +89,11 @@ export function registerOnLongPress(){
     
     map.on('mousedown', function (e) {
         longPressTimeout = setTimeout(function () {
-            onLongPress(e);
+            onLongPress(e.latlng);
         }, longPressDuration);
     });
     
     map.on('mouseup', function () {
         clearTimeout(longPressTimeout);
     });
-    
-    function onLongPress(e) {
-        // Handle the long press event here
-        console.log('Long press at', e.latlng);
-        
-        // Move current position
-        currentPos.updateLocation(e.latlng)
-    }
 }

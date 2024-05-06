@@ -1,6 +1,6 @@
 // file2.js
 import 'https://unpkg.com/leaflet';
-import { initializeMap, onLocationFound, getMap, registerOnLongPress } from './map.js';
+import { initializeMap, onLocationFound, getMap, registerOnLongPress, onLongPress} from './map.js';
 import { itineraryOne } from './itinerary.js';
 import "./numbered_markers.js"
 
@@ -21,6 +21,12 @@ function testFunc(e) {
 
     // Change its content
     myDiv.innerHTML = e.coords.latitude.toString() + " - " + e.coords.longitude.toString();
+
+    var latlngStruct = {lat:e.coords.latitude, lng: e.coords.longitude};
+
+    map.locate({setView: true});
+    onLongPress(latlngStruct);
+    map.setZoom(110);
 }
 
 map.on('locationerror', onLocationError);
