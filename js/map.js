@@ -3,7 +3,7 @@ import { Fallback } from './tileFallback.js';
 
 const PARIS_LATLNG = [48.866667, 2.333333];
 const ZOOM_LEVEL = 200; //10;
-const RADIUS = 50; //700;
+const RADIUS = 500; //700;
 const MATHIS_ICON = L.icon({
     iconUrl: './assets/mathis_icon.png',
     iconSize: [50, 50], // Size of the icon
@@ -103,6 +103,7 @@ export function registerOnLongPress(){
     var longPressDuration = 500; // in milliseconds
     
     map.on('mousedown', function (e) {
+        console.log("PRESS");
         longPressTimeout = setTimeout(function () {
             onLongPress(e.latlng);
         }, longPressDuration);

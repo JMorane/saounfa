@@ -9,8 +9,8 @@ function setStoredMarker(marker_id, was_seen, displayed, color) {
         displayed: displayed,
         color: color
     };
-    console.log("Setting");
-    console.log(marker_id, value);
+    //console.log("Setting");
+    //console.log(marker_id, value);
     localStorage.setItem(marker_id.toString(), JSON.stringify(value));
 }
 
@@ -22,8 +22,9 @@ function getStoredMarker(marker_id) {
         color: "lightgray"
     };
     var value = JSON.parse(localStorage.getItem(marker_id.toString()));
-    console.log("Getting");
-    console.log(marker_id, value);
+    console.log(value);
+    //console.log("Getting");
+    //console.log(marker_id, value);
     return value !== null ? value : defaultValue;
 }
 
@@ -39,7 +40,7 @@ class MarkerManager {
         console.log(`Adding ${title}`);
 
         var idx = this.markers.length + 1;
-        localStorage.removeItem(idx.toString());
+        // localStorage.removeItem(idx.toString());
         var stored = getStoredMarker(idx)
 
         var icon = new L.AwesomeNumberMarkers({
@@ -63,11 +64,12 @@ class MarkerManager {
             var audio = document.getElementById('audioPlayer');
             if ((!audio.paused) && (audio.src.split('/').pop() == marker.mp3.split('/').pop())){
                 // We check if we are on the same marker
-                audio.pause();
-                audio.currentTime = 0; // Reset audio to the beginning
+                // audio.pause();
+                // audio.currentTime = 0; // Reset audio to the beginning
             }
             else {
                 if (marker.marker_type == "active"){
+                    console.log("play");
                     audio.src = marker.mp3;
                     if (audio.paused) {
                         audio.play();

@@ -10,7 +10,7 @@ function itineraryOne(){
         title : "Bel-Air",
         color : "lightgray",
         marker_type : "inactive",
-        mp3: "./assets/audio/notre_dame.mp3"
+        mp3: "./assets/audio/bel_air.mp3"
     })
 
     markerManager.addMarker({
