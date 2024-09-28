@@ -40,7 +40,7 @@ class MarkerManager {
         console.log(`Adding ${title}`);
 
         var idx = this.markers.length + 1;
-        // localStorage.removeItem(idx.toString());
+        //localStorage.removeItem(idx.toString()); //TODO: comment this line
         var stored = getStoredMarker(idx)
 
         var icon = new L.AwesomeNumberMarkers({
@@ -101,6 +101,10 @@ class MarkerManager {
             if ((marker.idx > 1) && !(this.markers[marker.idx-2].was_seen)) {
                 return
             }
+            if (!marker.displayed){
+                this.markers[marker.idx-1].displayed = true;
+                this.markers[marker.idx-1].addTo(this.map)
+            }
             var color = "green";
             marker.marker_type = marker_type;
             var icon = new L.AwesomeNumberMarkers({
@@ -116,8 +120,8 @@ class MarkerManager {
 
             // If next marker exists and isn't displayed, do it:
             if ((marker.idx < this.markers.length) && !(this.markers[marker.idx].displayed)){
-                this.markers[marker.idx].displayed = true;
-                this.markers[marker.idx].addTo(this.map)
+                //this.markers[marker.idx].displayed = true;
+                //this.markers[marker.idx].addTo(this.map)
             }
         }
         if ((marker_type == "inactive") && (marker.marker_type != "inactive")){
