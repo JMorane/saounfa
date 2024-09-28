@@ -12,6 +12,7 @@ function setStoredMarker(marker_id, was_seen, displayed, color) {
     //console.log("Setting");
     //console.log(marker_id, value);
     localStorage.setItem(marker_id.toString(), JSON.stringify(value));
+    // localStorage.clear(); //TODO remove
 }
 
 
@@ -40,7 +41,7 @@ class MarkerManager {
         console.log(`Adding ${title}`);
 
         var idx = this.markers.length + 1;
-        //localStorage.removeItem(idx.toString()); //TODO: comment this line
+        //localStorage.removeItem(idx.toString());
         var stored = getStoredMarker(idx)
 
         var icon = new L.AwesomeNumberMarkers({
