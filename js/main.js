@@ -78,6 +78,9 @@ function onLocationFound(e) {
     console.log("Location found");
     console.log(e.latlng);
     currentPos.setInitial(e.latlng)
+    map.on('move', () => {
+        currentPos.updateLocation(map.getCenter());
+    });
 }
 
 // For debbuging: move current position where clicked
@@ -89,6 +92,8 @@ function onLongPress(latlng) {
     // Move current position
     currentPos.updateLocation(latlng)
 }
+
+
 
 function registerOnLongPress(){
     var longPressTimeout;
@@ -125,8 +130,8 @@ function testFunc(e) {
 
 
     //map.locate({setView: true});
-    map.panTo([latlngStruct.lat, latlngStruct.lng], {animate:true});
-    onLongPress(latlngStruct);
+    map.panTo([latlngStruct.lat, latlngStruct.lng], {animate:true, duration:1});
+    //onLongPress(latlngStruct);
     //map.setZoom((1+0.1*Math.random())*110);
 }
 
