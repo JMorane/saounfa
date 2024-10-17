@@ -6,7 +6,7 @@ import { Fallback } from './tileFallback.js';
 
 const PARIS_LATLNG = [48.866667, 2.333333];
 const ZOOM_LEVEL = 200; //10;
-const RADIUS = 25; //700;
+const RADIUS = 50; //700;
 const MATHIS_ICON = L.icon({
     iconUrl: './assets/mathis_icon.png',
     iconSize: [50, 50], // Size of the icon
