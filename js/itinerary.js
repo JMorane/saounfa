@@ -10,7 +10,7 @@ function itineraryOne(){
         title : "Naturenville",
         color : "lightgray",
         marker_type : "inactive",
-        mp3: "./assets/audio/bel_air.mp3"
+        mp3: "./assets/audio/naturenville.mp3"
     })
 
     markerManager.addMarker({
@@ -18,7 +18,7 @@ function itineraryOne(){
         title : "Rue Auguste Perret",
         color : "lightgray",
         marker_type : "inactive",
-        mp3: "./assets/audio/notre_dame.mp3"
+        mp3: "./assets/audio/perret.mp3"
     })
 
     markerManager.addMarker({
