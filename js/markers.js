@@ -1,5 +1,5 @@
 import 'https://unpkg.com/leaflet';
-import { getMap, getCurrentPos } from './map.js';
+import { getMap, getCurrentPos } from './main.js';
 
 const ICON_SIZE = 30;
 
