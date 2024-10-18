@@ -23,7 +23,7 @@
       
       createIcon: function () {
         
-        var div = document.createElement('div'),
+        var div = document.createElement('button'),
             options = this.options;
   
         div.innerHTML = this._createInner();

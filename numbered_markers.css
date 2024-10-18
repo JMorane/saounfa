@@ -8,11 +8,13 @@
     top:0;
     display: block;
     text-align: center;
+    border: none;
   }
   
   .awesome-number-marker i {
     color: #333;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
     display: inline-block;
     font-size: 14px;
   }

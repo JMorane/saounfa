@@ -44,6 +44,7 @@ class MarkerManager {
         this.markers = [];
         this.add_markers_at_init = add_markers_at_init;
         this.show_next_marker = show_next_marker;
+        this.markers_state = {};
         setInterval(this.activateMarkersNearby.bind(this), 1000);
     }
 
@@ -171,6 +172,22 @@ class MarkerManager {
         this.markers = [];
     }
 
+    checkIfChange(){
+        var current_state = {}
+        const currentPos = getCurrentPos();
+        for (const marker of this.markers){
+            var isWithinCircle = currentPos.circle.getBounds().contains(marker.getLatLng());
+            if (isWithinCircle) {
+                current_state[marker.idx] = true;
+            } else {
+                current_state[marker.idx] = false;
+            }
+        }
+        const no_change = compareDictionaries(current_state, this.markers_state);
+        this.markers_state = current_state;
+        return no_change
+    }
+
     activateMarkersNearby(){
         const self = this;
         function activateMarkerNearBy(marker){
@@ -185,6 +202,25 @@ class MarkerManager {
         this.markers.forEach(activateMarkerNearBy);
     }
 
+}
+
+function compareDictionaries(dict1, dict2) {
+    // Check if both dictionaries have the same number of keys
+    const keys1 = Object.keys(dict1);
+    const keys2 = Object.keys(dict2);
+
+    if (keys1.length !== keys2.length) {
+        return false; // Different number of keys, so they are not equal
+    }
+
+    // Check if all keys in dict1 are in dict2 and have the same values
+    for (const key of keys1) {
+        if (dict2[key] !== dict1[key]) {
+            return false; // Value for the key does not match
+        }
+    }
+
+    return true; // All keys and values match
 }
 
 export { MarkerManager };
