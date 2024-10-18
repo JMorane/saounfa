@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>Your HTML Document</title>
     <!-- Leaflet CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="./numbered_markers.css" />
+    <link rel="stylesheet" href="./dropdown.css" />
     <style>
       body {
           padding: 0;
@@ -21,9 +23,14 @@
 </head>
 <body>
     <!-- Your HTML content here -->
-    <div id="myDiv">Initial content</div>
+    <select class="centered-select" id="itineraryDropdown">
+        <option value="" disabled selected>Itineraire ?</option>
+        <option value=1>Itinéraire 1</option>
+    </select>
     <div id="map"></div>
     <audio id="audioPlayer"></audio>
+    <!-- move the following div above the map div to show it for debug -->
+    <div id="myDiv">DEBUG</div>
     <!-- Leaflet JS -->
     <script type="module" src="./js/map.js"></script>
     <script type="module" src="./js/main.js"></script>

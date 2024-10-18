@@ -2,6 +2,20 @@ import 'https://unpkg.com/leaflet';
 
 import { MarkerManager } from './markers.js'
 
+export function setItinerary(itinerary_id){
+    switch (true) {
+        case itinerary_id == 1:
+            itineraryOne();
+            break;
+        case itinerary_id == 2:
+            itineraryTwo();
+            break;
+        default:
+            console.log("Invalid itinerary");
+            break;
+    }
+}
+
 function itineraryOne(){
     var markerManager = new MarkerManager({add_markers_at_init:false});
 
@@ -93,5 +107,3 @@ function itineraryOne(){
         mp3: "./assets/audio/tour_eiffel.mp3",
     })
 }
-
-export {itineraryOne}
