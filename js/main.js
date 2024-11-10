@@ -78,10 +78,9 @@ function onLocationFound(e) {
     // 3. Adds a listener that will automaticaly move the currentPos marker to the location
 
     console.log("Location found");
-    console.log(e.latlng);
-
-    currentPos.setInitial(e.latlng)
-
+    var latlngStruct = {lat:e.coords.latitude, lng: e.coords.longitude};
+    console.log(latlngStruct);
+    currentPos.setInitial(latlngStruct)
     map.on('move', () => {
         currentPos.updateLocation(map.getCenter());
     });
@@ -110,16 +109,17 @@ function registerOnLongPress(){
 
 function moveToPosition(e) {
 
+
     // For debug: log time + position
     var myDiv = document.getElementById("myDiv");
     var latlngStruct = {lat:e.coords.latitude, lng: e.coords.longitude};
+    console.log('Location updated:', latlngStruct);
     const dateTime = new Date().toLocaleString()
     myDiv.innerHTML = dateTime + " - " + latlngStruct.lat.toString() + " - " + latlngStruct.lng.toString();
 
     // Smoothly move to position
     map.panTo([latlngStruct.lat, latlngStruct.lng], {animate:true, duration:1});
 }
-
 
 function moveToCurrentPosition() {
     // 
@@ -142,8 +142,71 @@ if (itinerary_id != null) {
 
 // Register everything
 registerOnLongPress()
-map.on('locationfound', onLocationFound); 
-setInterval(moveToCurrentPosition, 1000);
+// map.on('locationfound', onLocationFound); 
+
+// setInterval(moveToCurrentPosition, 1000);
+
+// START
+
+const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
+  
+let lastUpdate = 0;
+let isLocInit = false;
+let nPos = 0;
+
+function divlog(message){
+    document.getElementById("myDiv").innerHTML = message;
+}
+
+  // Start tracking location changes with a minimum time interval between updates
+function startTrackingLocation(onLocationChange, onError, minInterval) {
+    if (!navigator.geolocation) {
+        throw new Error('Geolocation is not supported by your browser');
+    }
+    ;
+    navigator.geolocation.watchPosition(
+        // Success callback with throttling
+        (position) => {
+            nPos += 1;
+            if (!isLocInit){
+                onLocationFound(position);
+                isLocInit = true;
+            }
+            const now = Date.now();
+            // Check if enough time has passed since last update
+            if (now - lastUpdate >= minInterval) {
+                lastUpdate = now;
+                onLocationChange(position);
+            }
+        },
+        // Error callback
+        (error) => {
+        const errorMessage = {
+            1: 'Permission denied',
+            2: 'Position unavailable',
+            3: 'Timeout'
+        };
+        
+        if (onError) {
+            onError(errorMessage[error.code] || 'Unknown error');
+        }
+        },
+        options
+    );
+}
+  
+  // Example usage with a 5-second minimum interval between updates:
+startTrackingLocation(
+    moveToPosition,
+    (error) => {
+    document.getElementById("myDiv").innerHTML = error;
+    },
+    1000  // Only update every 5 seconds
+);
 
 export function getMap() {
     return map; // Export a function to get the map object
