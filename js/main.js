@@ -81,9 +81,7 @@ function onLocationFound(e) {
     var latlngStruct = {lat:e.coords.latitude, lng: e.coords.longitude};
     console.log(latlngStruct);
     currentPos.setInitial(latlngStruct)
-    map.on('move', () => {
-        currentPos.updateLocation(map.getCenter());
-    });
+    // FOR DEBUG: map.on('move', () => {currentPos.updateLocation(map.getCenter());});
 }
 
 // For debbuging: move current position where clicked

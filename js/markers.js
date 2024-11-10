@@ -3,6 +3,10 @@ import { getMap, getCurrentPos } from './main.js';
 
 const ICON_SIZE = 30;
 
+function divlog(message){
+    document.getElementById("myDiv").innerHTML = message;
+}
+
 function getColor(is_next, is_close) {
     if (is_close){
         return "green"
@@ -80,6 +84,7 @@ class MarkerManager {
         marker.was_seen = stored.was_seen;
         marker.is_next = stored.is_next;
         marker.is_close = stored.is_close;
+        marker.is_on_map = false;
 
         // add click event
         marker.on('click', function() {
@@ -109,17 +114,22 @@ class MarkerManager {
         }
 
         // add to markers list
-        this.markers.push(marker);
-            console.log("Number of markers: ", this.markers.length)
-        if ((marker.was_seen == true) || marker.is_next || (marker.idx==0)){
+        console.log("Number of markers: ", this.markers.length)
+        if (
+            (marker.was_seen == true) || 
+            (marker.is_next && this.show_next_marker) || 
+            (marker.idx==0)
+        ){
             marker.addTo(this.map);
-        }
-
+            marker.is_on_map = true;
+        }        
+        this.markers.push(marker);
         return marker;
     }
 
     markerIsNearPosition(marker) {
         console.log(marker.idx, "is near");
+        divlog(marker.idx);
         marker.is_next = false;
         marker.is_close = true;
         marker.was_seen = true;
@@ -129,8 +139,11 @@ class MarkerManager {
             markerColor: marker.color,
         });
         marker.setIcon(icon);
+        if (!marker.is_on_map){
+            marker.addTo(this.map);
+            marker.is_on_map = true;
+        }
         if ((marker.idx < this.markers.length + 1) && !(this.markers[marker.idx + 1].was_seen)){
-            // next marker should now be shown
             this.markerIsNext(this.markers[marker.idx + 1]);
         }
         setStoredMarker(marker.idx, marker.was_seen, marker.is_next, marker.is_close);
@@ -146,8 +159,12 @@ class MarkerManager {
             markerColor: marker.color,
         });
         marker.setIcon(icon);
-        if (marker.was_seen == false){
+        if (
+            (marker.was_seen == false) &&
+            (this.show_next_marker)
+        ){
             marker.addTo(this.map);
+            marker.is_on_map = true;
         }
         setStoredMarker(marker.idx, marker.was_seen, marker.is_next, marker.is_close);
     }

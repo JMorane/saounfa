@@ -17,7 +17,7 @@ export function setItinerary(itinerary_id){
 }
 
 function itineraryOne(){
-    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:true});
+    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
 
     markerManager.addMarker({
         latlng : [48.822252, 2.358653],
