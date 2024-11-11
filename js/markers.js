@@ -206,6 +206,7 @@ class MarkerManager {
     }
 
     activateMarkersNearby(){
+        window.mycircle = getCurrentPos().circle;
         const self = this;
         function activateMarkerNearBy(marker){
             const currentPos = getCurrentPos();

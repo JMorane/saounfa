@@ -7,7 +7,7 @@ const default_tile = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tile = "https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg?api_key=3e5104ec-9859-4ec2-b391-1f9caf641112"
 
 const ZOOM_LEVEL = 150;
-const RADIUS = 40;
+const RADIUS = 50;
 const MATHIS_ICON = L.icon({
     iconUrl: './assets/mathis_icon.png',
     iconSize: [50, 50],
@@ -41,7 +41,6 @@ class CurrentPosition {
         this.color = null;
         this.displayed = false;
     }
-
     setInitial(latlng) {
         if (this.displayed) {
             return
