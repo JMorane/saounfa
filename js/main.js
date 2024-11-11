@@ -7,7 +7,7 @@ const default_tile = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tile = "https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg?api_key=3e5104ec-9859-4ec2-b391-1f9caf641112"
 
 const ZOOM_LEVEL = 150;
-const RADIUS = 50;
+const RADIUS = 40;
 const MATHIS_ICON = L.icon({
     iconUrl: './assets/mathis_icon.png',
     iconSize: [50, 50],
@@ -85,12 +85,12 @@ function onLocationFound(e) {
 }
 
 // For debbuging: move current position where clicked
-function onLongPress(latlng) {
+/* function onLongPress(latlng) {
     console.log('Long press at', latlng);
     currentPos.updateLocation(latlng)
-}
+} */
 
-function registerOnLongPress(){
+/* function registerOnLongPress(){
     var longPressTimeout;
     var longPressDuration = 500; // in milliseconds
     
@@ -103,7 +103,7 @@ function registerOnLongPress(){
     map.on('mouseup', function () {
         clearTimeout(longPressTimeout);
     });
-}
+} */
 
 function moveToPosition(e) {
 
@@ -116,6 +116,7 @@ function moveToPosition(e) {
     myDiv.innerHTML = dateTime + " - " + latlngStruct.lat.toString() + " - " + latlngStruct.lng.toString();
 
     // Smoothly move to position
+    currentPos.updateLocation(latlngStruct);
     map.panTo([latlngStruct.lat, latlngStruct.lng], {animate:true, duration:1});
 }
 
@@ -139,7 +140,7 @@ if (itinerary_id != null) {
 }
 
 // Register everything
-registerOnLongPress()
+//registerOnLongPress()
 // map.on('locationfound', onLocationFound); 
 
 // setInterval(moveToCurrentPosition, 1000);

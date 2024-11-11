@@ -7,13 +7,41 @@ export function setItinerary(itinerary_id){
         case itinerary_id == 1:
             itineraryOne();
             break;
-        case itinerary_id == 2:
-            itineraryTwo();
+        case itinerary_id == 0:
+            itineraryAnniversary();
             break;
         default:
             console.log("Invalid itinerary");
             break;
     }
+}
+
+function itineraryAnniversary(){
+    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
+
+    markerManager.addMarker({
+        latlng : [48.837140750828, 2.4044191991569206],
+        title : "La Vega",
+        mp3: "./assets/audio/vega.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.8365430514207, 2.3943123262137607], //[48.8671938,2.3959993],
+        title : "Boulangerie",
+        mp3: "./assets/audio/boulangerie.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.85493897028012, 2.354999734547234], //[48.8671938,2.3959993],
+        title : "Chez Julien",
+        mp3: "./assets/audio/resto.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.8702190271689, 2.3113786857293666], //[48.8671938,2.3959993],
+        title : "Hotel",
+        mp3: "./assets/audio/hotel.mp3"
+    })
 }
 
 function itineraryOne(){
