@@ -52,4 +52,4 @@ Dans le terminal, faire `python -m http.server` et ouvrir dans le navigateur. Te
 
 # Pour pusher
 
-Dans le terminal: `git commit -am "nouvel itineraire"`, puis `git push`
+Dans le terminal: `git add .` puis `git commit -m "nouvel itineraire"`, puis `git push`
