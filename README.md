@@ -42,9 +42,10 @@ Prendre le `n` qui suit par rapport aux itinéraires précédents
 
 ## 4. Rajouter l'option de cet itinéraire dans la liste déroulante
 
-Dans `index.html`, dans le <select> qui commence à la ligne 25:
+Dans `index.html`, dans le `<select>` qui commence à la ligne 25:
 
 `<option value=n>Mon nouvel itinéraire ?</option>`
+
 
 # Pour tester
 
