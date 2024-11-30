@@ -49,3 +49,7 @@ Dans `index.html`, dans le <select> qui commence à la ligne 25:
 # Pour tester
 
 Dans le terminal, faire `python -m http.server` et ouvrir dans le navigateur. Temporairement: mettre `add_markers_at_init:true` pour voir les points.
+
+# Pour pusher
+
+Dans le terminal: `git commit -am "nouvel itineraire"`, puis `git push`
