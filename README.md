@@ -28,7 +28,7 @@ On peut mettre:
 Dans `markerManager.addMarker`:
 * latlng : Mettre les coordonnées sous forme de liste [lat, lng],
 * title : Pas important mais c'est pour nous, savoir de quel point il s'agit
-* mp3: Le chemin vers les MP3. **Doit commencer par "./assets/audio/", et ensuite pointer vers le bon fichier
+* mp3: Le chemin vers les MP3. **Doit commencer par "./assets/audio/"**, et ensuite pointer vers le bon fichier
 
 ## 3. Rajouter une condition dans la fonction `setItinerary`
 
