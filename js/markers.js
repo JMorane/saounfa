@@ -130,6 +130,8 @@ class MarkerManager {
     markerIsNearPosition(marker) {
         console.log(marker.idx, "is near");
         divlog(marker.idx);
+        var titlediv = document.getElementById('titlediv');
+        titlediv.innerHTML = marker.title // Re-rendre le bandeau visible
         marker.is_next = false;
         marker.is_close = true;
         marker.was_seen = true;
@@ -170,6 +172,10 @@ class MarkerManager {
     }
 
     markerIsNotNearPosition(marker) {
+        var titlediv = document.getElementById('titlediv');
+        if (titlediv.innerHTML == marker.title){
+            titlediv.innerHTML = "" // Plutot display:none
+        }
         if (!(marker.was_seen)){
             // Wasn't seen yet, we do nothing
             return

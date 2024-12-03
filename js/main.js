@@ -106,7 +106,8 @@ function onLocationFound(e) {
 
 function moveToPosition(e) {
 
-
+    // e: contains the lat/long informations from the GPS
+    // THis function is called to move the mathis icon to GPS pos + to pan the map
     // For debug: log time + position
     var myDiv = document.getElementById("myDiv");
     var latlngStruct = {lat:e.coords.latitude, lng: e.coords.longitude};
@@ -203,7 +204,7 @@ startTrackingLocation(
     (error) => {
     document.getElementById("myDiv").innerHTML = error;
     },
-    1000  // Only update every 5 seconds
+    1000  // Only update every 1 seconds
 );
 
 export function getMap() {
