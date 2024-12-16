@@ -43,7 +43,7 @@ function itineraryRoyale(){
         mp3: "./assets/audio/royale/3.mp3"
     })
      markerManager.addMarker({
-        latlng : [48.853736, 2.347578],
+        latlng : [48.848007, 2.339210],
         title : "Fontaine Médicis",
         mp3: "./assets/audio/royale/4.mp3"
     })
