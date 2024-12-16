@@ -29,48 +29,53 @@ function itineraryRoyale(){
     })
     markerManager.addMarker({
         latlng : [48.849280, 2.337344],
-        title : "Palais Luxembourg",
+        title : "Palais du Luxembourg",
         mp3: "./assets/audio/royale/1.mp3"
     })
     markerManager.addMarker({
         latlng : [48.847218, 2.337254],
-        title : "Bassin Luxembourg",
+        title : "Grand Bassin du Luxembourg",
         mp3: "./assets/audio/royale/2.mp3"
     })
     markerManager.addMarker({
         latlng : [48.847044, 2.336122],
-        title : "Statue Marguerite de Provence",
+        title : "Statue de Marguerite de Provence",
         mp3: "./assets/audio/royale/3.mp3"
+    })
+     markerManager.addMarker({
+        latlng : [48.853736, 2.347578],
+        title : "Fontaine Médicis",
+        mp3: "./assets/audio/royale/4.mp3"
     })
     markerManager.addMarker({
         latlng : [48.853736, 2.347578],
         title : "Notre-Dame",
-        mp3: "./assets/audio/royale/4.mp3"
+        mp3: "./assets/audio/royale/5.mp3"
     })
     markerManager.addMarker({
         latlng : [48.855413, 2.345922],
         title : "Palais de la Cité",
-        mp3: "./assets/audio/royale/5.mp3"
+        mp3: "./assets/audio/royale/6.mp3"
     })
     markerManager.addMarker({
         latlng : [48.856501, 2.342622],
         title : "Place Dauphine",
-        mp3: "./assets/audio/royale/6.mp3"
+        mp3: "./assets/audio/royale/7.mp3"
     })
     markerManager.addMarker({
         latlng : [48.860014, 2.340168],
         title : "Colonnade du Louvre",
-        mp3: "./assets/audio/royale/7.mp3"
+        mp3: "./assets/audio/royale/8.mp3"
     })
     markerManager.addMarker({
         latlng : [48.861410, 2.339930],
         title : "Rue Oratoire",
-        mp3: "./assets/audio/royale/8.mp3"
+        mp3: "./assets/audio/royale/9.mp3"
     })
      markerManager.addMarker({
         latlng : [48.860940, 2.334912],
         title : "Statue de Louis XIV",
-        mp3: "./assets/audio/royale/9.mp3"
+        mp3: "./assets/audio/royale/10.mp3"
     })
 }
 
