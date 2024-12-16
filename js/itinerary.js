@@ -20,7 +20,7 @@ export function setItinerary(itinerary_id){
 }
 
 function itineraryRoyale(){
-    var markerManager = new MarkerManager({add_markers_at_init:true, show_next_marker:false});
+    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
 
     markerManager.addMarker({
         latlng : [48.866044, 2.394667],
