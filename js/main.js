@@ -26,6 +26,9 @@ var theTile = new Fallback(tile, {
 const dropdown = document.getElementById('itineraryDropdown');
 var marker_manager
 dropdown.addEventListener('change', function () {
+    if (marker_manager != null){
+        marker_manager.removeAllMarkers()
+    }
     const selectedValue = dropdown.value;
     marker_manager = setItinerary(selectedValue);
     localStorage.setItem("itinerary_id", selectedValue);
