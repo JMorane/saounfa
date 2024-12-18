@@ -18,25 +18,29 @@ function getColor(is_next, is_close) {
 }
 
 function setStoredMarker(marker_id, was_seen, is_next, is_close) {
+    var itinerary_id = localStorage.getItem("itinerary_id");
     var value = {
         was_seen: was_seen,
         is_next: is_next,
-        is_close: is_close
+        is_close: is_close,
     };
+    var full_id = itinerary_id + "-" + marker_id.toString()
     //console.log("Setting");
     //console.log(marker_id, value);
-    localStorage.setItem(marker_id.toString(), JSON.stringify(value));
+    localStorage.setItem(full_id, JSON.stringify(value));
     // localStorage.clear(); //TODO remove
 }
 
 
 function getStoredMarker(marker_id) {
+    var itinerary_id = localStorage.getItem("itinerary_id");
+    var full_id = itinerary_id + "-" + marker_id.toString()
     var defaultValue = {
         was_seen: false,
         is_next: false,
         is_close: false
     };
-    var value = JSON.parse(localStorage.getItem(marker_id.toString()));
+    var value = JSON.parse(localStorage.getItem(full_id));
     //console.log("Getting");
     //console.log(marker_id, value);
     return value !== null ? value : defaultValue;
