@@ -5,13 +5,13 @@ import { MarkerManager } from './markers.js'
 export function setItinerary(itinerary_id){
     switch (true) {
         case itinerary_id == "test":
-            itineraryTest();
+            return itineraryTest();
             break;
         case itinerary_id == 0:
-            itineraryAnniversary();
+            return itineraryAnniversary();
             break;
         case itinerary_id == 1:
-            itineraryRoyale();
+            return itineraryRoyale();
             break;
         default:
             console.log("Invalid itinerary");
@@ -77,6 +77,7 @@ function itineraryRoyale(){
         title : "Statue de Louis XIV",
         mp3: "./assets/audio/royale/10.mp3"
     })
+    return markerManager
 }
 
 function itineraryAnniversary(){
@@ -105,6 +106,7 @@ function itineraryAnniversary(){
         title : "Hotel",
         mp3: "./assets/audio/anniversary/hotel.mp3"
     })
+    return markerManager
 }
 
 function itineraryTest(){
@@ -175,4 +177,5 @@ function itineraryTest(){
         title : "église Notre Dame de la Croix. ",
         mp3: "./assets/audio/tour_eiffel.mp3",
     })
+    return markerManager
 }
