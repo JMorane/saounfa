@@ -20,26 +20,31 @@ export function setItinerary(itinerary_id){
 }
 
 function itineraryRoyale(){
-    var markerManager = new MarkerManager({add_markers_at_init:true, show_next_marker:false});
+    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
 
     markerManager.addMarker({
         latlng : [48.866044, 2.394667],
         title : "Chez Mathis",
-        mp3: "./assets/audio/royale/1.mp3"
+        mp3: "./assets/audio/royale/0.mp3"
     })
     markerManager.addMarker({
         latlng : [48.849280, 2.337344],
-        title : "Palais Luxembourg",
-        mp3: "./assets/audio/royale/2.mp3"
+        title : "Palais du Luxembourg",
+        mp3: "./assets/audio/royale/1.mp3"
     })
     markerManager.addMarker({
         latlng : [48.847218, 2.337254],
-        title : "Bassin Luxembourg",
-        mp3: "./assets/audio/royale/3.mp3"
+        title : "Grand Bassin du Luxembourg",
+        mp3: "./assets/audio/royale/2.mp3"
     })
     markerManager.addMarker({
         latlng : [48.847044, 2.336122],
-        title : "Statue Marguerite de Provence",
+        title : "Statue de Marguerite de Provence",
+        mp3: "./assets/audio/royale/3.mp3"
+    })
+     markerManager.addMarker({
+        latlng : [48.848007, 2.339210],
+        title : "Fontaine Médicis",
         mp3: "./assets/audio/royale/4.mp3"
     })
     markerManager.addMarker({
@@ -66,6 +71,11 @@ function itineraryRoyale(){
         latlng : [48.861410, 2.339930],
         title : "Rue Oratoire",
         mp3: "./assets/audio/royale/9.mp3"
+    })
+     markerManager.addMarker({
+        latlng : [48.860940, 2.334912],
+        title : "Statue de Louis XIV",
+        mp3: "./assets/audio/royale/10.mp3"
     })
 }
 
