@@ -13,6 +13,8 @@ const MATHIS_ICON = L.icon({
     iconSize: [50, 50],
 });
 
+let map;
+
 // Tile definition
 var theTile = new Fallback(tile, {
     minZoom: 1,
@@ -22,9 +24,10 @@ var theTile = new Fallback(tile, {
 
 // Choosing the itinerary
 const dropdown = document.getElementById('itineraryDropdown');
+var marker_manager
 dropdown.addEventListener('change', function () {
     const selectedValue = dropdown.value;
-    setItinerary(selectedValue);
+    marker_manager = setItinerary(selectedValue);
     localStorage.setItem("itinerary_id", selectedValue);
 });
 
@@ -60,7 +63,6 @@ class CurrentPosition {
 }
 
 // Setting up the map
-let map;
 map = L.map('map')
 map.locate({setView: true});
 map.setZoom(ZOOM_LEVEL);
