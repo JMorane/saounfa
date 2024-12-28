@@ -22,6 +22,48 @@ export function setItinerary(itinerary_id){
     }
 }
 
+function ItineraryRoyal2(){
+    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
+
+    markerManager.addMarker({
+        latlng : [48.861149, 2.335088],
+        title : "Départ",
+        mp3: "./assets/audio/PVR2/0PVR2.mp3"
+    })
+
+     markerManager.addMarker({
+        latlng : [48.861620, 2.332978],
+        title : "Arc de triomphe du Caroussel",
+        mp3: "./assets/audio/PVR2/1PVR2.mp3"
+    })
+    
+    markerManager.addMarker({
+        latlng : [48.865304, 2.337936],
+        title : "Jardins du Palais Royal",
+        mp3: "./assets/audio/PVR2/2PVR2.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.865800, 2.341032],
+        title : "Place des Victoires",
+        mp3: "./assets/audio/PVR2/3PVR2.mp3"
+    })
+
+     markerManager.addMarker({
+        latlng : [48.864212, 2.348017],
+        title : "Tour Jean Sans Peur",
+        mp3: "./assets/audio/PVR2/4PVR2.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.863225, 2.344324],
+        title : "Eglise Saint Eustache",
+        mp3: "./assets/audio/PVR2/5PVR2.mp3"
+    })
+}
+
+
+
 function itineraryRoyale(){
     var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
 
