@@ -25,7 +25,7 @@ export function setItinerary(itinerary_id){
     }
 }
 
-function ItineraryRoyal2(){
+function itineraryRoyal2(){
     var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
 
     markerManager.addMarker({
