@@ -16,6 +16,9 @@ export function setItinerary(itinerary_id){
          case itinerary_id == 2:
             return itineraryRoyal2();
             break;
+            case itinerary_id == 3:
+            return itineraryVBV();
+            break;
         case itinerary_id == -1:
             localStorage.clear();
             alert("Hstorique nettoyé !")
