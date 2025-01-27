@@ -25,6 +25,132 @@ export function setItinerary(itinerary_id){
     }
 }
 
+function itineraryVBV(){
+    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:true});
+
+    markerManager.addMarker({
+        latlng : [48.866044, 2.394667],
+        title : "Chez Mathis",
+        mp3: "./assets/audio/VBV/VBV_1_ElevenLabs_Chapter_1.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.835431, 2.406879],
+        title : "Porte Dorée",
+        mp3: "./assets/audio/VBV/VBV_2_Porte_dorée.mp3"
+    })
+    
+    markerManager.addMarker({
+        latlng : [48.832959, 2.409957],
+        title : "Vendeur de barques",
+        mp3: "./assets/audio/VBV/VBV_3_ElevenLabs_Lac_Dausmenil.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.832959, 2.409957],
+        title : "Ile de Reuilly",
+        mp3: "./assets/audio/VBV/VBV_4_ElevenLabs_Ile_de_reuilly.mp3"
+    })
+
+     markerManager.addMarker({
+        latlng : [48.828835, 2.416364],
+        title : "Grande Pagode",
+        mp3: "./assets/audio/VBV/VBV_5_ElevenLabs_GrandePagode.mp3"
+    })
+    
+    markerManager.addMarker({
+        latlng : [48.828027, 2.418747],
+        title : "Entrée dans le Bois",
+        mp3: "./assets/audio/VBV/VBV_6_ElevenLabs_Fin_du_Lac_Dausmelin (1).mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.822269, 2.442096],
+        title : "Fontaine",
+        mp3: "./assets/audio/VBV/VBV_7_ElevenLabs_Fontaine.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.819614, 2.447448],
+        title : "Lac de gravelle",
+        mp3: "./assets/audio/VBV/VBV_8_ElevenLabs_Lac_De_Gravelle.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.820710, 2.453632],
+        title : "Arboretum",
+        mp3: "./assets/audio/VBV/VBV_9_ElevenLabs_Arboretum.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.822437, 2.458991],
+        title : "Ecole du Breuil",
+        mp3: "./assets/audio/VBV/VBV_10_ElevenLabs_Eole_du_Breuil.mp3"
+    })
+
+     markerManager.addMarker({
+        latlng : [48.827429, 2.464078],
+        title : "Eau - rivière Joinville",
+        mp3: "./assets/audio/VBV/VBV_11_ElevenLabs_Rivière_Joinville.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.833839, 2.464898],
+        title : "jardin d'agronomie tropicale",
+        mp3: "./assets/audio/VBV/VBV_12_ElevenLabs_Jardin_tropical.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.834713, 2.467194],
+        title : "Pavillon de la Cochinchine",
+        mp3: "./assets/audio/VBV/VBV_13_ElevenLabs_Pavillon_Cochinchine.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.835601, 2.467991],
+        title : "Sortie du JAT",
+        mp3: "./assets/audio/VBV/VBV_14_ElevenLabs_Sortie_Jardin.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.834137, 2.461462],
+        title : "Lac des Minimes",
+        mp3: "./assets/audio/VBV/VBV_15_ElevenLabs_Lac_des_minimes.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.835979, 2.454238],
+        title : "Route du Champs de Manoeuvres - Cartoucherie",
+        mp3: "./assets/audio/VBV/VBV_16_ElevenLabs_route_des_maneouvres.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.835979, 2.454238],
+        title : "Obélisque",
+        mp3: "./assets/audio/VBV/VBV_17_ElevenLabs_Obélisque.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.835280, 2.437811],
+        title : "Vers le Chateau",
+        mp3: "./assets/audio/VBV/VBV_18_ElevenLabs_Vers_le_chateau.mp3"
+    })
+
+    markerManager.addMarker({
+        latlng : [48.839556, 2.436016],
+        title : "Fin de la ballade",
+        mp3: "./assets/audio/VBV/VBV_19_ElevenLabs_Fin_du_tour..mp3"
+    })
+
+    
+
+
+    
+
+    
+    return markerManager
+}
+
 function itineraryRoyal2(){
     var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
 
