@@ -4,7 +4,7 @@ import { MarkerManager } from './markers.js'
 
 export function setItinerary(itinerary_id){
     switch (true) {
-        case itinerary_id == "test":
+        case itinerary_id == 4:
             return itineraryTest();
             break;
         case itinerary_id == 0:
@@ -13,7 +13,7 @@ export function setItinerary(itinerary_id){
         case itinerary_id == 1:
             return itineraryRoyale();
             break;
-         case itinerary_id == 2:
+        case itinerary_id == 2:
             return itineraryRoyal2();
             break;
             case itinerary_id == 3:
@@ -32,7 +32,7 @@ function itineraryVBV(){
     var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:true});
 
     markerManager.addMarker({
-        latlng : [48.866044, 2.394667],
+        latlng : [48.83582899014416, 2.4066115520200992],
         title : "Chez Mathis",
         mp3: "./assets/audio/VBV/VBV_1_ElevenLabs_Chapter_1.mp3"
     })
@@ -50,7 +50,7 @@ function itineraryVBV(){
     })
 
     markerManager.addMarker({
-        latlng : [48.832959, 2.409957],
+        latlng : [48.83002765035753, 2.4150530682741422],
         title : "Ile de Reuilly",
         mp3: "./assets/audio/VBV/VBV_4_ElevenLabs_Ile_de_reuilly.mp3"
     })
@@ -122,13 +122,13 @@ function itineraryVBV(){
     })
 
     markerManager.addMarker({
-        latlng : [48.835979, 2.454238],
+        latlng : [48.83567809230023, 2.45538909553405],
         title : "Route du Champs de Manoeuvres - Cartoucherie",
         mp3: "./assets/audio/VBV/VBV_16_ElevenLabs_route_des_maneouvres.mp3"
     })
 
     markerManager.addMarker({
-        latlng : [48.835979, 2.454238],
+        latlng : [48.83426062878614, 2.4458425930432997],
         title : "Obélisque",
         mp3: "./assets/audio/VBV/VBV_17_ElevenLabs_Obélisque.mp3"
     })
@@ -200,8 +200,8 @@ function itineraryRoyale(){
     var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
 
     markerManager.addMarker({
-        latlng : [48.866044, 2.394667],
-        title : "Chez Mathis",
+        latlng : [48.845579754925886, 2.3397407568996385],
+        title : "RER B, le GOAT",
         mp3: "./assets/audio/royale/0.mp3"
     })
     markerManager.addMarker({
@@ -288,24 +288,6 @@ function itineraryAnniversary(){
 
 function itineraryTest(){
     var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
-
-    markerManager.addMarker({
-        latlng : [48.822252, 2.358653],
-        title : "Naturenville",
-        mp3: "./assets/audio/naturenville.mp3"
-    })
-
-    markerManager.addMarker({
-        latlng : [48.824471, 2.357990],
-        title : "Rue Auguste Perret",
-        mp3: "./assets/audio/perret.mp3"
-    })
-
-    markerManager.addMarker({
-        latlng : [48.828471, 2.359990], //[48.8671938,2.3959993],
-        title : "Mathis",
-        mp3: "./assets/audio/bel_air.mp3"
-    })
 
     markerManager.addMarker({
         latlng : [48.86243,2.3850897],
