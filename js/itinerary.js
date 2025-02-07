@@ -326,7 +326,7 @@ function itineraryDCDCT(){
     })
 
     markerManager.addMarker({
-        latlng : [48.8714766,2.3889373],
+        latlng : [48.870014, 2.394282],
         title : "Pavillon Carré de Baudouin. ",
         mp3: "./assets/audio/DCDCT/6_Du_coté_de_chez_le_Tis_pavillon_Carré_de_Baudouin..mp3",
     })
