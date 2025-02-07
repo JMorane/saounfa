@@ -5,7 +5,7 @@ import { MarkerManager } from './markers.js'
 export function setItinerary(itinerary_id){
     switch (true) {
         case itinerary_id == 4:
-            return itineraryTest();
+            return itineraryDCDCT();
             break;
         case itinerary_id == 0:
             return itineraryAnniversary();
@@ -286,55 +286,61 @@ function itineraryAnniversary(){
     return markerManager
 }
 
-function itineraryTest(){
+function itineraryDCDCT(){
     var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
 
     markerManager.addMarker({
-        latlng : [48.86243,2.3850897],
-        title : "Pere Lachaise",
-        mp3: "./assets/audio/notre_dame.mp3"
+        latlng : [48.870652, 2.401461],
+        title : "Départ",
+        mp3: "./assets/audio/DCDCT/0_Du_coté_de_chez_le_Tis_Bien_le_bonjour.mp3"
     })
     
     markerManager.addMarker({
-        latlng : [48.8653431,2.3915813],
-        title : "Square du Docteur JAcques-Joseph-Grandier",
-        mp3: "./assets/audio/tour_eiffel.mp3",
+        latlng : [48.862603, 2.387819],
+        title : "Père Lachaise",
+        mp3: "./assets/audio/DCDCT/1_Du_coté_de_chez_le_Tis_Père_lachaise.mp3",
     })
 
     markerManager.addMarker({
-        latlng : [48.8706068,2.394018],
+        latlng : [48.865306, 2.394201],
+        title : "Square du Docteur Jacques-Joseph-Grandier",
+        mp3: "./assets/audio/DCDCT/2__coté_de_chez_le_Tis_Square_du_Docteur_JAcques-Joseph-Grandier.mp3",
+    })
+
+    markerManager.addMarker({
+        latlng : [48.870557, 2.396573],
         title : "Square des Saint-Simoniens",
-        mp3: "./assets/audio/tour_eiffel.mp3",
+        mp3: "./assets/audio/DCDCT/3_Du_coté_de_chez_le_Tis_Square_des_Saint-Simoniens.mp3",
     })
 
     markerManager.addMarker({
-        latlng : [48.8716096,2.3926461],
+        latlng : [48.871578, 2.395333],
         title : "Square Emmi-Pickler",
-        mp3: "./assets/audio/tour_eiffel.mp3",
+        mp3: "./assets/audio/DCDCT/4_Du_coté_de_chez_le_Tis_Square_Emmi-Pickler.mp3",
     })
 
     markerManager.addMarker({
-        latlng : [48.8705521,2.3909355],
-        title : "Villa de l'Ermitage",
-        mp3: "./assets/audio/tour_eiffel.mp3",
-    })
-
-    markerManager.addMarker({
-        latlng : [48.8700596,2.3915865],
-        title : "pavillon Carré de Baudouin. ",
-        mp3: "./assets/audio/tour_eiffel.mp3",
+        latlng : [48.870482, 2.393146],
+        title : "Villa de l'Ermitage ",
+        mp3: "./assets/audio/DCDCT/5_Du_coté_de_chez_le_Tis_Villa_de_l'Ermitage.mp3",
     })
 
     markerManager.addMarker({
         latlng : [48.8714766,2.3889373],
-        title : "Regard Saint Martin",
-        mp3: "./assets/audio/tour_eiffel.mp3",
+        title : "Pavillon Carré de Baudouin. ",
+        mp3: "./assets/audio/DCDCT/6_Du_coté_de_chez_le_Tis_pavillon_Carré_de_Baudouin..mp3",
     })
 
     markerManager.addMarker({
-        latlng : [48.9135076,2.1913571],
-        title : "église Notre Dame de la Croix. ",
-        mp3: "./assets/audio/tour_eiffel.mp3",
+        latlng : [48.871478, 2.391495],
+        title : "Regard Saint Martin",
+        mp3: "./assets/audio/DCDCT/7_Du_coté_de_chez_le_Tis_Regard_Saint_Martin.mp3",
+    })
+
+    markerManager.addMarker({
+        latlng : [48.868521, 2.388077],
+        title : "église Notre Dame de la Croix",
+        mp3: "./assets/audio/DCDCT/8_Du_coté_de_chez_le_Tis_église_Notre_Dame_de_la_Croix..mp3",
     })
     return markerManager
 }
