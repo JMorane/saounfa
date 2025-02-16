@@ -287,7 +287,7 @@ function itineraryAnniversary(){
 }
 
 function itineraryDCDCT(){
-    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:false});
+    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:true});
 
     markerManager.addMarker({
         latlng : [48.870652, 2.401461],
