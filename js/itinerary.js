@@ -320,27 +320,36 @@ function itineraryDCDCT(){
     })
 
     markerManager.addMarker({
-        latlng : [48.870482, 2.393146],
-        title : "Villa de l'Ermitage ",
-        mp3: "./assets/audio/DCDCT/5_Du_coté_de_chez_le_Tis_Villa_de_l'Ermitage.mp3",
+        latlng : [48.871478, 2.391495],
+        title : "Regard Saint Martin",
+        mp3: "./assets/audio/DCDCT/5_Du_coté_de_chez_le_Tis_Regard_Saint_Martin.mp3",
     })
 
     markerManager.addMarker({
-        latlng : [48.870014, 2.394282],
-        title : "Pavillon Carré de Baudouin. ",
-        mp3: "./assets/audio/DCDCT/6_Du_coté_de_chez_le_Tis_pavillon_Carré_de_Baudouin..mp3",
+        latlng : [48.870482, 2.393146],
+        title : "Villa de l'Ermitage ",
+        mp3: "./assets/audio/DCDCT/6_Du_coté_de_chez_le_Tis_Villa_de_l'Ermitage.mp3",
     })
 
     markerManager.addMarker({
         latlng : [48.871478, 2.391495],
-        title : "Regard Saint Martin",
-        mp3: "./assets/audio/DCDCT/7_Du_coté_de_chez_le_Tis_Regard_Saint_Martin.mp3",
+        title : "Cité Leroy",
+        mp3: "./assets/audio/DCDCT/7_Du_coté_de_chez_le_Tis_Cité_Leroy.mp3",
     })
+
+
+    markerManager.addMarker({
+        latlng : [48.870014, 2.394282],
+        title : "Pavillon Carré de Baudouin. ",
+        mp3: "./assets/audio/DCDCT/8_Du_coté_de_chez_le_Tis_pavillon_Carré_de_Baudouin..mp3",
+    })
+
+
 
     markerManager.addMarker({
         latlng : [48.868521, 2.388077],
         title : "église Notre Dame de la Croix",
-        mp3: "./assets/audio/DCDCT/8_Du_coté_de_chez_le_Tis_église_Notre_Dame_de_la_Croix..mp3",
+        mp3: "./assets/audio/DCDCT/9_Du_coté_de_chez_le_Tis_église_Notre_Dame_de_la_Croix..mp3",
     })
     return markerManager
 }
