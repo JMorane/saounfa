@@ -287,7 +287,7 @@ function itineraryAnniversary(){
 }
 
 function itineraryDCDCT(){
-    var markerManager = new MarkerManager({add_markers_at_init:false, show_next_marker:true});
+    var markerManager = new MarkerManager({add_markers_at_init:true, show_next_marker:true});
 
     markerManager.addMarker({
         latlng : [48.870652, 2.401461],
@@ -326,13 +326,13 @@ function itineraryDCDCT(){
     })
 
     markerManager.addMarker({
-        latlng : [48.870482, 2.393146],
+        latlng : [48.870284, 2.391608],
         title : "Villa de l'Ermitage ",
         mp3: "./assets/audio/DCDCT/6_Du_coté_de_chez_le_Tis_Villa_de_l'Ermitage.mp3",
     })
 
     markerManager.addMarker({
-        latlng : [48.871478, 2.391495],
+        latlng : [48.870764, 2.393196],
         title : "Cité Leroy",
         mp3: "./assets/audio/DCDCT/7_Du_coté_de_chez_le_Tis_Cité_Leroy.mp3",
     })
